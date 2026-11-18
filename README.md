@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# JalanJava ⚡🚗
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An AI trip assistant for EV drivers in Java, Indonesia. Not just a route planner: it plans the trip around your car and battery, then keeps adapting when things go wrong.
 
-## Available Scripts
+## What it does
+- Plans routes between 8 Java cities (OSRM) and recommends the minimum number of charging stops for your EV (6 presets or custom battery/consumption)
+- Shows real charger locations from OpenChargeMap along the route
+- Claude-powered trip analysis and an in-app chat assistant
+- Journey simulation with live battery %, distance to next charger and live stats
+- Handles disruptions mid-trip: traffic, accidents/news, and charger outages. The AI proposes an alternative and you confirm before anything changes
+- Simulated charger reservations with confirmation
+- Night mode
 
-In the project directory, you can run:
+## Important: what is simulated
+- Charger **availability, queues and reservations are simulated**. OpenChargeMap is a static directory and does not provide live status.
+- Traffic, accidents, news and outages are simulated events.
+- Battery % and distances during the journey are estimates. This is a prototype to explore how an AI assistant could support EV travel, not a production navigation tool.
+- Not affiliated with PLN or any charging operator.
 
-### `npm start`
+## Setup
+Requires Node.js 18+.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/YOUR_USERNAME/jalanjava.git
+cd jalanjava
+npm install
+cp .env.example .env     # then edit .env and add your two keys
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run the AI proxy and the app in **two separate terminals**:
 
-### `npm test`
+```bash
+# terminal 1
+node server.js
+# terminal 2
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open http://localhost:3000.
 
-### `npm run build`
+## API keys
+| Key | Where from | Used by |
+|---|---|---|
+| `REACT_APP_OCM_KEY` | openchargemap.org/site/develop/api | browser (public OCM key, low risk) |
+| `ANTHROPIC_API_KEY` | console.anthropic.com | `server.js` only |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Anthropic key stays on the proxy server and is never shipped to the browser. Do not rename it with a `REACT_APP_` prefix, as those variables get bundled into the public JavaScript.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech
+React, react-leaflet, OSRM, OpenChargeMap, Express proxy, Anthropic Messages API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+Add your LinkedIn post or video link here.
