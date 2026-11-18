@@ -48,6 +48,3 @@ The Anthropic key stays on the proxy server and is never shipped to the browser.
 
 ## Tech
 React, react-leaflet, OSRM, OpenChargeMap, Express proxy, Anthropic Messages API.
-
-## Demo
-Add your LinkedIn post or video link here.
