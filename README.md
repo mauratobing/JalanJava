@@ -2,13 +2,9 @@
 
 An AI trip assistant for EV drivers in Java, Indonesia. Not just a route planner: it plans the trip around your car and battery, then keeps adapting when things go wrong.
 
-<img width="1470" height="956" alt="Screenshot 2026-11-19 at 15 42 51" src="https://github.com/user-attachments/assets/f3973e03-ac3b-462a-b13c-aedf571ac7c1" />
-<img width="1470" height="956" alt="Screenshot 2026-11-19 at 15 44 48" src="https://github.com/user-attachments/assets/c9461780-0377-4390-8c14-58016941ec93" />
-
-[![Route planning and AI analysis](https://github.com/user-attachments/assets/f3973e03-ac3b-462a-b13c-aedf571ac7c1)](https://github.com/mauratobing/JalanJava/releases/tag/v1.0.0))
-[![Traffic disruption and rerouting](https://github.com/user-attachments/assets/c9461780-0377-4390-8c14-58016941ec93)](https://github.com/mauratobing/JalanJava/releases/tag/v1.0.0)
-
+[![Route planning and AI analysis](https://github.com/user-attachments/assets/84bf8463-6816-409a-834f-c8c56c2b11bc)](https://github.com/mauratobing/JalanJava/releases/tag/v1.0.0)
 ▶ [Watch the demo video](https://github.com/mauratobing/JalanJava/releases/tag/v1.0.0)
+
 
 ## What it does
 - Plans routes between 8 Java cities (OSRM) and recommends the minimum number of charging stops for your EV (6 presets or custom battery/consumption)
